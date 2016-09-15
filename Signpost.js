@@ -14,20 +14,21 @@ window.Signpost = {
   level: null,
   init: function(level) {
     this.level = level || this.LEVEL.FULL;
+    this.avoidError();
   },
   debug: function(msg) {
     (this.level >= this.LEVEL.DEBUG) && console.debug(msg);
   },
   info: function(msg) {
-    (this.level >= this.LEVEL.INFO) && console.debug(msg);
+    (this.level >= this.LEVEL.INFO) && console.info(msg);
   },
   log: function(msg) {
-    (this.level >= this.LEVEL.LOG) && console.debug(msg);
+    (this.level >= this.LEVEL.LOG) && console.log(msg);
   },
   warn: function(msg) {
-    (this.level >= this.LEVEL.WARN) && console.debug(msg);
+    (this.level >= this.LEVEL.WARN) && console.warn(msg);
   },
   error: function(msg) {
-    (this.level >= this.LEVEL.ERROR) && console.debug(msg);
+    (this.level >= this.LEVEL.ERROR) && console.error(msg);
   }
 };
